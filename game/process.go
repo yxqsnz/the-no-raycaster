@@ -1,6 +1,8 @@
 package game
 
 // TODO: Sensitivy
+// TODO: Wall check
+// TODO: Directional Input
 
 import (
 	rl "github.com/gen2brain/raylib-go/raylib"
@@ -23,7 +25,6 @@ func control(cx *Context) {
 	}
 }
 
-// TODO: Directional Input
 func mov(cx *Context) {
 	switch {
 	case rl.IsKeyDown(rl.KeyA):
