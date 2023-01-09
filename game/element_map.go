@@ -2,6 +2,7 @@ package game
 
 import (
 	"image/color"
+	"math"
 
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
@@ -13,7 +14,7 @@ func RenderMap(cx *Context) {
 		for w, col := range row {
 			draw := func(col color.RGBA) {
 				render := func() {
-					Retangle((w * rect_w / cx.MapDeScale), (h*rect_h)/cx.MapDeScale, rect_h, rect_w, col)
+					Retangle((w * rect_w / cx.MapDeScale), (h*rect_h)/cx.MapDeScale, int(math.Ceil(float64(rect_w)/float64(cx.MapDeScale))), int(math.Ceil(float64(rect_w)/float64(cx.MapDeScale))), col)
 				}
 
 				if cx.FunnyMode {
