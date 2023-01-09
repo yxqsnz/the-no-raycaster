@@ -7,16 +7,19 @@ import (
 )
 
 func RenderMap(cx *Context) {
-	sh, sw := rl.GetScreenHeight(), rl.GetScreenWidth()
-	rect_h, rect_w := sh/cx.MapHeight, sw/cx.MapWidth
+	rect_h, rect_w := cx.GetRectSize()
 
 	for h, row := range cx.Map {
 		for w, col := range row {
 			draw := func(col color.RGBA) {
+				render := func() {
+					Retangle((w * rect_w / cx.MapDeScale), (h*rect_h)/cx.MapDeScale, rect_h, rect_w, col)
+				}
+
 				if cx.FunnyMode {
-					go Retangle(w*rect_h/3, h*rect_w/3, 30, 30, col)
+					go render()
 				} else {
-					Retangle(w*rect_h/3, h*rect_w/3, 30, 30, col)
+					render()
 				}
 			}
 

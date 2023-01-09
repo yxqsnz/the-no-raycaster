@@ -8,6 +8,7 @@ func (cx *Context) Render() {
 	rl.ClearBackground(rl.LightGray)
 
 	RenderMap(cx)
-	rl.DrawFPS(20, 20)
+	RenderPlayerInMap(cx)
 
+	rl.DrawFPS(20, 20)
 }

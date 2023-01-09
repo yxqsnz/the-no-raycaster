@@ -30,6 +30,9 @@ func (cx *Context) Prepare() {
 	}
 
 	cx.FunnyMode = false
+	cx.Player.X = 3.456
+	cx.Player.Y = 2.345
+	cx.MapDeScale = 3
 
 	cx.ensureMap()
 	fmt.Printf("\nMap (%dx%d): %v\n", cx.MapHeight, cx.MapWidth, cx.Map[:cx.MapHeight])
