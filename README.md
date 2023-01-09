@@ -11,5 +11,5 @@ The No Raycaster
 ### Why AGPL?
 - idk, i want to cry rn
 
-### Why is code sucks?
+### Why this code sucks?
 - Because i havent coded in go for a while.
