@@ -1,9 +1,12 @@
 package game
 
-import "fmt"
+import (
+	"fmt"
+
+	rl "github.com/gen2brain/raylib-go/raylib"
+)
 
 func (cx *Context) ensureMap() {
-
 	for _, line := range cx.Map {
 		if len(line) == 0 {
 			break
@@ -28,5 +31,5 @@ func (cx *Context) Prepare() {
 
 	cx.ensureMap()
 	fmt.Printf("\nMap (%dx%d): %v\n", cx.MapHeight, cx.MapWidth, cx.Map[:cx.MapHeight])
-
+	rl.DisableCursor()
 }
