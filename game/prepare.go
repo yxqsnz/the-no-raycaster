@@ -29,6 +29,8 @@ func (cx *Context) Prepare() {
 		panic(err)
 	}
 
+	cx.FunnyMode = false
+
 	cx.ensureMap()
 	fmt.Printf("\nMap (%dx%d): %v\n", cx.MapHeight, cx.MapWidth, cx.Map[:cx.MapHeight])
 	rl.DisableCursor()

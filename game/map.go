@@ -31,6 +31,7 @@ func (cx *Context) LoadMap(fileName string) (err error) {
 		_, err := file.Read(buf)
 
 		if err == io.EOF {
+
 			return nil
 		}
 
@@ -51,12 +52,13 @@ func (cx *Context) LoadMap(fileName string) (err error) {
 		case 'g':
 			print("g")
 			cx.Map[line] = append(cx.Map[line], FilledGreen)
-
+		case '*':
+			print("*")
+			cx.Map[line] = append(cx.Map[line], FilledBlue)
 		case '\n':
-
 			println()
 			line++
 		}
-
 	}
+
 }
