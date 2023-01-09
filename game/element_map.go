@@ -17,7 +17,6 @@ func RenderMap(cx *Context) {
 					go Retangle(w*rect_h/3, h*rect_w/3, 30, 30, col)
 				} else {
 					Retangle(w*rect_h/3, h*rect_w/3, 30, 30, col)
-
 				}
 			}
 
