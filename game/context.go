@@ -1,8 +1,11 @@
 package game
 
 type Player struct {
-	X float64
-	Y float64
+	X, Y float64
+}
+
+type Ray struct {
+	X, Y float64
 }
 
 type Context struct {
@@ -11,5 +14,6 @@ type Context struct {
 	MapWidth   int
 	FunnyMode  bool
 	MapDeScale int
+	Rays       []Ray
 	Player     Player
 }

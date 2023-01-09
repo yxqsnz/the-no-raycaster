@@ -9,6 +9,7 @@ func (cx *Context) Render() {
 
 	RenderMap(cx)
 	RenderPlayerInMap(cx)
+	RenderRays(cx)
 
 	rl.DrawFPS(20, 20)
 }
