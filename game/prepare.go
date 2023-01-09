@@ -38,8 +38,4 @@ func (cx *Context) Prepare() {
 	fmt.Printf("\nMap (%dx%d): %v\n", cx.MapHeight, cx.MapWidth, cx.Map[:cx.MapHeight])
 	rl.DisableCursor()
 
-	cx.ProcessRays()
-	cx.FindWalls()
-
-	fmt.Printf("Walls: %v\n", cx.Walls)
 }
