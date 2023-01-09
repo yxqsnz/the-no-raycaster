@@ -3,8 +3,6 @@ package game
 import (
 	"image/color"
 	"math"
-
-	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
 func RenderMap(cx *Context) {
@@ -24,16 +22,7 @@ func RenderMap(cx *Context) {
 				}
 			}
 
-			switch col {
-			case Nothing:
-				draw(rl.Black)
-			case FilledBlue:
-				draw(rl.Blue)
-			case FilledRed:
-				draw(rl.Red)
-			case FilledGreen:
-				draw(rl.Green)
-			}
+			draw(col.AsColor())
 		}
 	}
 }

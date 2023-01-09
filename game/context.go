@@ -8,10 +8,16 @@ type ContretePosition struct {
 	X, Y int
 }
 
+type Colision struct {
+	At             Position
+	ScreenPosition int
+	Distance       float64
+}
+
 type Context struct {
-	Map        [][]int
-	Walls      map[ContretePosition]int
-	Colisions  []Position
+	Map        [][]Tile
+	Walls      map[Colision]Tile
+	Colisions  []Colision
 	MapHeight  int
 	MapWidth   int
 	FunnyMode  bool

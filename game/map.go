@@ -1,21 +1,41 @@
 package game
 
 import (
+	"image/color"
 	"io"
 	"os"
+
+	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
+type Tile int
+
 const (
-	Nothing = iota
+	Nothing Tile = iota
 	FilledBlue
 	FilledRed
 	FilledGreen
 )
 
+func (t Tile) AsColor() color.RGBA {
+	switch t {
+	case Nothing:
+		return rl.Black
+	case FilledBlue:
+		return rl.Blue
+	case FilledRed:
+		return rl.Red
+	case FilledGreen:
+		return rl.Green
+	default:
+		return color.RGBA{255, 255, 255, 255}
+	}
+}
+
 func (cx *Context) LoadMap(fileName string) (err error) {
 	file, err := os.Open(fileName)
 
-	cx.Map = make([][]int, 16)
+	cx.Map = make([][]Tile, 16)
 
 	if err != nil {
 		return err
