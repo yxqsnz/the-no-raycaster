@@ -1,6 +1,8 @@
 # the-no-raycaster
 ## Warning: Work in Progress
 
+![](./screenshot.png)
+
 The No Raycaster
 
 ## FAQ
