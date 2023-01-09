@@ -32,6 +32,7 @@ func (cx *Context) Prepare() {
 	cx.FunnyMode = false
 	cx.Player.X = 3.456
 	cx.Player.Y = 2.345
+	cx.PlayerLookingAt = 1.523
 	cx.MapDeScale = 6
 
 	cx.ensureMap()

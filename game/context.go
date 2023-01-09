@@ -15,13 +15,14 @@ type Colision struct {
 }
 
 type Context struct {
-	Map        [][]Tile
-	Walls      map[Colision]Tile
-	Colisions  []Colision
-	MapHeight  int
-	MapWidth   int
-	FunnyMode  bool
-	MapDeScale int
-	Rays       []Position
-	Player     Position
+	Map             [][]Tile
+	Walls           map[Colision]Tile
+	Colisions       []Colision
+	MapHeight       int
+	MapWidth        int
+	FunnyMode       bool
+	MapDeScale      int
+	Rays            []Position
+	Player          Position
+	PlayerLookingAt float64
 }
