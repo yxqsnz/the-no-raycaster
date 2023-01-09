@@ -10,6 +10,7 @@ func (cx *Context) Render() {
 	RenderMap(cx)
 	RenderPlayerInMap(cx)
 	RenderRays(cx)
+	RenderPseudo3D(cx)
 
 	rl.DrawFPS(20, 20)
 }

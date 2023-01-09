@@ -10,7 +10,8 @@ import (
 func (cx *Context) ProcessRays() {
 	fov := math.Pi / 3.
 	playerLookingAt := 1.523
-	cx.Rays = make([]Ray, rl.GetScreenWidth())
+	cx.Rays = make([]Position, rl.GetScreenWidth())
+	cx.Colisions = make([]Position, rl.GetScreenWidth())
 
 	for i := 0; i < rl.GetScreenWidth(); i++ {
 		angle := playerLookingAt - fov/2. + fov*float64(i)/float64(rl.GetScreenWidth())
@@ -20,12 +21,13 @@ func (cx *Context) ProcessRays() {
 			rayY := cx.Player.Y + distance*math.Sin(angle)
 
 			if cx.Map[int(rayY)][int(rayX)] != Nothing {
+				cx.Colisions = append(cx.Colisions, Position{rayX, rayY})
 				break
 			}
 
-			cx.Rays = append(cx.Rays, Ray{rayX, rayY})
+			cx.Rays = append(cx.Rays, Position{rayX, rayY})
 		}
 	}
 
-	go fmt.Printf("Generated %v rays.", len(cx.Rays))
+	go fmt.Printf("Generated %v rays.\n", len(cx.Rays))
 }
