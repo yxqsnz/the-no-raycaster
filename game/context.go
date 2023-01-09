@@ -11,7 +11,7 @@ type ContretePosition struct {
 type Colision struct {
 	At             Position
 	ScreenPosition int
-	Distance       float64
+	Delta          float64
 }
 
 type Context struct {
