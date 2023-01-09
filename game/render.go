@@ -7,10 +7,11 @@ import (
 func (cx *Context) Render() {
 	rl.ClearBackground(rl.LightGray)
 
-	RenderRays(cx)
 	RenderPseudo3D(cx)
 
 	RenderMap(cx)
 	RenderPlayerInMap(cx)
+	RenderRays(cx)
+
 	rl.DrawFPS(20, 20)
 }
