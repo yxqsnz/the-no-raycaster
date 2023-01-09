@@ -10,7 +10,7 @@ func (cx *Context) ensureMap() {
 		}
 
 		if len(line) < cx.MapWidth {
-			panic("Line is minor than others!")
+			panic("Line is smaller than others!")
 		} else if len(line) > cx.MapWidth {
 			cx.MapWidth = len(line)
 		}
