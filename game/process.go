@@ -46,8 +46,18 @@ func mouseMov(cx *Context) {
 	cx.PlayerLookingAt += float64(rl.GetMouseDelta().X * 0.1 * rl.GetFrameTime())
 }
 
+func lazyResize(cx *Context) {
+	if len(cx.Rays) < rl.GetScreenWidth() || len(cx.Colisions) < rl.GetScreenWidth() {
+		cx.Rays = make([]Position, rl.GetScreenWidth())
+		cx.Colisions = make([]Colision, rl.GetScreenWidth())
+	}
+
+}
+
 // My tears goes here.
 func (cx *Context) Process() {
+	lazyResize(cx)
+
 	cx.ProcessRays()
 	cx.FindWalls()
 

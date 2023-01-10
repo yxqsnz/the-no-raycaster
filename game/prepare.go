@@ -38,5 +38,4 @@ func (cx *Context) Prepare() {
 	cx.ensureMap()
 	fmt.Printf("\nMap (%dx%d): %v\n", cx.MapHeight, cx.MapWidth, cx.Map[:cx.MapHeight])
 	rl.DisableCursor()
-
 }
